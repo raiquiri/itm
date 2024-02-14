@@ -1,4 +1,4 @@
-def gaussian_elimination(A, b):
+def gauss(A, B):
     n = len(A)
 
     # прямой ход метода Гаусса
@@ -6,7 +6,7 @@ def gaussian_elimination(A, b):
         # Выбор главного элемента
         max_index = i
         for j in range(i + 1, n):
-            b[i], b[max_index] = b[max_index], b[i]
+            B[i], B[max_index] = B[max_index], B[i]
 
             # Приведение к верхнетреугольному виду
             if abs(A[j][i]) > abs(A[max_index][i]):
@@ -16,14 +16,14 @@ def gaussian_elimination(A, b):
             factor = A[j][i] / A[i][i]
             for k in range(i, n):
                 A[j][k] -= factor * A[i][k]
-            b[j] -= factor * b[i]
+            B[j] -= factor * B[i]
 
     # обратный ход метода Гаусса
     x = [0] * n
     for i in range(n - 1, -1, -1):
-        x[i] = b[i] / A[i][i]
+        x[i] = B[i] / A[i][i]
         for j in range(i - 1, -1, -1):
-            b[j] -= A[j][i] * x[i]
+            B[j] -= A[j][i] * x[i]
 
     return x
 
@@ -35,9 +35,9 @@ def main():
          [2, -1, 3],
          [1, 2, -1]]
 
-    b = [-1, 13, 9]
+    B = [-1, 13, 9]
 
-    print("Решение:", gaussian_elimination(A, b))
+    print("Решение:", gauss(A, B))
 
 if __name__ == "__main__":
     main()
