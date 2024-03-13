@@ -1,3 +1,5 @@
+"""Метод половинного деления, а - начало интервала, b - конец интеравала, DElTA - погрешность"""
+
 def function(x):
     return x**2 - 2
 
@@ -21,7 +23,7 @@ def methodBisection(a, b, DELTA):
     return (a + b) / 2
 
 def main():
-    print(methodBisection(0, 3, 0.00001))
+    print(methodBisection(0.1, 3, 0.00001))
 
 if __name__ == "__main__":
     main()
