@@ -71,7 +71,7 @@ def main():
         y_kotes.append(methodKotes(steps, 0, i) - (1 - math.cos(i)))
 
     # построение графиков
-    #pyplot.plot(x, y, label = "sin(x)")
+    # pyplot.plot(x, y, label = "sin(x)")
     pyplot.plot(x, y_rectangle, label = "Погрешность методом прямоугольников" )
     pyplot.plot(x, y_trapezoid, label="Погрешность методом трапеций")
     pyplot.plot(x, y_kotes, label="Погрешность методом Котеса")
