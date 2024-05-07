@@ -26,7 +26,7 @@ def main():
     # количество узлов для исходных данных
     stepCount = 5
 
-    xValues = numpy.linspace(-2, 2, stepCount + 1)
+    xValues = numpy.linspace(-2, 2, stepCount)
     yValues = numpy.abs(xValues)
 
     xIValues = numpy.linspace(-2, 2, 100)
